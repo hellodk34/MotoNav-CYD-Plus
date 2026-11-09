@@ -1,0 +1,6 @@
+# 密钥与敏感配置，不入库
+secret.h
+
+# 编译产物（Arduino IDE / arduino-cli）
+build/
+*.bin

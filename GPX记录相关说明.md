@@ -35,8 +35,10 @@ TRACK_STOPPED ──START TRACK──▶ TRACK_WAIT_FIX ──(定位良好)─�
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <gpx version="1.1" creator="MotoNav-CYD" xmlns="http://www.topografix.com/GPX/1/1">
-  <trk><name>MotoNav ride</name><trkseg>
+  <trk><name>2026-11-09-211206-track</name><trkseg>
 ```
+
+name 标签命名规则：`year-month-day-hourminutesecond-track`。
 
 ### 2.2 轨迹点（`writeTrackPoint`）
 

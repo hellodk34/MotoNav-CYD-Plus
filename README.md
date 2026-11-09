@@ -4,6 +4,11 @@
 
 核心改动：适配 ST7789 屏幕（修反色）、加装 BMP280 气压计实现海拔/坡度/温度显示、表盘上限提高到 240 km/h、三色速度分区、断电自动补统计、GPX 数据异常防护、文件命名固定东八区、**WiFi 配网 + GPX 轨迹自动上传**等。
 
+## 构建环境
+
+- Arduino IDE for Linux, AppImage version: 2.3.10
+- arduino-cli  version: 1.5.1
+
 ## 使用截图
 
 ![CYDGPS码表.jpg](./screenshots/CYDGPS码表.jpg)
@@ -13,6 +18,7 @@
 1. ESP32-2432S028R / CYD 开发版 48 元
 2. ATGM336H GNSS 模块 17.43 元
 3. BMP280 气压传感器模块 5.6 元
+4. TF 卡 / Micro SD 卡，随意，我使用吃灰已久的、现成的闪迪 8GB 0元
 
 总的 71.03 元。
 
@@ -414,7 +420,5 @@ arduino-cli upload --fqbn "esp32:esp32:jczn_2432s028r:PartitionScheme=no_ota" -p
 
 - **上游项目**：[markseder/MotoNav-CYD](https://github.com/markseder/MotoNav-CYD)（MIT License，Copyright © 2026 Pavel Matveev）——本项目的硬件方案、仪表 UI 与 GPX 记录框架均基于其 V1.1.2。
 - **本改版（MotoNav-CYD-Plus）**：[hellodk34 (hellodk34)](https://github.com/hellodk34) 二次开发——ST7789 / CYD2USB 硬件适配、BMP280 海拔/坡度/温度、表盘上限提升至 240 km/h、WiFi 配网 + GPX 自动上传（TRACKS + WebDAV）与 ntfy 推送等。
-
-> 本改版代码未经原作者背书，请自行评估装车使用风险。
 
 > 安全提示：这是 DIY 项目。装车请务必使用带保险丝的电源、做好过压/浪涌保护、牢固固定并做好防水防震，屏幕安装在不妨碍视线与操控的位置。

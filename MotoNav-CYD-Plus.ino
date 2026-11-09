@@ -373,6 +373,20 @@ String makeTrackFileName() {
   return String(name);
 }
 
+// GPX <name> 标签：本地时间戳 + 固定后缀，形如 2026-11-09-210542-track（与文件名时间一致）。
+String makeTrackName() {
+  char name[32];
+  if (gps.date.isValid() && gps.time.isValid()) {
+    int y, mo, d, h, mi, s;
+    localDateTime(y, mo, d, h, mi, s);
+    snprintf(name, sizeof(name), "%04d-%02d-%02d-%02d%02d%02d-track", y, mo, d, h, mi, s);
+  } else {
+    snprintf(name, sizeof(name), "%08lu-track",
+             static_cast<unsigned long>(millis()));
+  }
+  return String(name);
+}
+
 String statisticsFileName(const String &gpxName) {
   String name = gpxName;
   if (name.endsWith(".GPX")) name.remove(name.length() - 4);
@@ -636,7 +650,7 @@ bool openTrackFile() {
   }
   trackFile.println("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
   trackFile.println("<gpx version=\"1.1\" creator=\"MotoNav-CYD-Plus\" xmlns=\"http://www.topografix.com/GPX/1/1\">");
-  trackFile.println("  <trk><name>MotoNav ride</name><trkseg>");
+  trackFile.println(String("  <trk><name>") + makeTrackName() + "</name><trkseg>");
   trackFile.flush();
   if (trackFile.getWriteError() || !writeActiveTrackMarker(trackFileName)) {
     trackFile.close();

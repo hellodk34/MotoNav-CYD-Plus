@@ -2,9 +2,7 @@
 
 **基于开源项目 [MotoNav-CYD](https://github.com/markseder/MotoNav-CYD) V1.1.2 二次开发的 GPS 摩托车车速表 / 行车电脑 / GPX 记录仪，针对 ESP32-2432S028R「CYD2USB（ST7789 屏）」做了硬件适配与功能扩展。**
 
-本目录是**个人改版（MOD）**，不是上游官方固件。核心改动：适配 ST7789 屏幕（修反色）、加装 BMP280 气压计实现海拔/坡度/温度显示、表盘上限提高到 240 km/h、三色速度分区、断电自动补统计、GPX 数据异常防护、文件命名固定东八区、**WiFi 配网 + GPX 轨迹自动上传**等。
-
-> 说明：本说明参考了原作者 README 的结构，但内容按本改版的实际实现重写，与上游不完全一致。上游面向 ILI9341 屏的 CYD，本改版面向 ST7789 屏的 CYD2USB，接线与显示配置都不同，请勿直接套用上游文档。
+核心改动：适配 ST7789 屏幕（修反色）、加装 BMP280 气压计实现海拔/坡度/温度显示、表盘上限提高到 240 km/h、三色速度分区、断电自动补统计、GPX 数据异常防护、文件命名固定东八区、**WiFi 配网 + GPX 轨迹自动上传**等。
 
 ---
 
@@ -401,7 +399,7 @@ arduino-cli upload --fqbn "esp32:esp32:jczn_2432s028r:PartitionScheme=no_ota" -p
 ## Credits
 
 - **上游项目**：[markseder/MotoNav-CYD](https://github.com/markseder/MotoNav-CYD)（MIT License，Copyright © 2026 Pavel Matveev）——本项目的硬件方案、仪表 UI 与 GPX 记录框架均基于其 V1.1.2。
-- **本改版（MotoNav-CYD-Plus）**：[dekai (hellodk34)](https://github.com/hellodk34) 二次开发——ST7789 / CYD2USB 硬件适配、BMP280 海拔/坡度/温度、表盘上限提升至 240 km/h、WiFi 配网 + GPX 自动上传（TRACKS + WebDAV）与 ntfy 推送等。
+- **本改版（MotoNav-CYD-Plus）**：[hellodk34 (hellodk34)](https://github.com/hellodk34) 二次开发——ST7789 / CYD2USB 硬件适配、BMP280 海拔/坡度/温度、表盘上限提升至 240 km/h、WiFi 配网 + GPX 自动上传（TRACKS + WebDAV）与 ntfy 推送等。
 
 > 本改版代码未经原作者背书，请自行评估装车使用风险。
 

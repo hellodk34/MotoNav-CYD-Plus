@@ -4,6 +4,20 @@
 
 核心改动：适配 ST7789 屏幕（修反色）、加装 BMP280 气压计实现海拔/坡度/温度显示、表盘上限提高到 240 km/h、三色速度分区、断电自动补统计、GPX 数据异常防护、文件命名固定东八区、**WiFi 配网 + GPX 轨迹自动上传**等。
 
+## 使用截图
+
+![CYDGPS码表.jpg](./screenshots/CYDGPS码表.jpg)
+
+## 复刻价格指导
+
+1. ESP32-2432S028R / CYD 开发版 48 元
+2. ATGM336H GNSS 模块 17.43 元
+3. BMP280 气压传感器模块 5.6 元
+
+总的 71.03 元。
+
+我做了一个粗糙的 bilibili 视频，喜欢的话给我一键三连哦 🌷 -> [使用ESP32 CYD开发版制作GPS码表](https://www.bilibili.com/video/BV1ZPxn6nEbM/)
+
 ---
 
 ## 目录
